@@ -21,8 +21,8 @@ echo Started scanning drives
 echo.
 echo -------------------------------------------------------------------
 echo.
-C:
-dir log4j-core-*.jar /b/s > tmp.txt
+cd \
+dir log4j-core-*.jar /b/s > %OUTPUT%\tmp.txt
 echo Performing mitigation
 echo.
 echo -------------------------------------------------------------------
@@ -31,6 +31,7 @@ for /f "tokens=*" %%s in (%OUTPUT%\tmp.txt) do (
 )
 
 del %OUTPUT%\tmp.txt
+
 
 D:
 dir log4j-core-*.jar /b/s > tmp.txt
